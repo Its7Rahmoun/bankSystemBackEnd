@@ -1,2 +1,8 @@
-package org.sid.ebankingbackend.dtos;public class requestpredected {
+package org.sid.ebankingbackend.dtos;
+
+import lombok.Data;
+
+@Data
+public class requestpredected {
+    String predected;
 }

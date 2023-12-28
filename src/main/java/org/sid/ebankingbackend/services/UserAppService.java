@@ -36,4 +36,23 @@ public class UserAppService {
         );
         return  userRepository.save(user);
     }
+
+
+    public UserApp saveuser1(String username,String password,String namecustomer,String rolename){
+        Customer cx = Customer.builder().email(namecustomer+"@mail.com")
+                .name(username)
+                .build();
+        Customer c = customerRepository.save(cx);
+        Role role = roleRepository.findByName(rolename);
+        UserApp user = new UserApp(
+                null,
+                username,
+                passwordEncoder.encode(password),
+                c,
+                List.of(role)
+        );
+        return  userRepository.save(user);
+    }
+
+
 }
